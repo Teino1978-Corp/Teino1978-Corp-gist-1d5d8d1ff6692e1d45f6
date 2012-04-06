@@ -1,0 +1,9 @@
+// Adds a pseudo element :after that clears floats, preventing them from riding
+// up into the element, while still allowing the element to wrap around floats
+// before it. This is useful for ensuring floating elements remain in place,
+// vertically, when the non-floating elements are too short to push them down. 
+=postclear($side: both)
+    &:after
+        content: " "
+        display: block
+        clear: $side
